@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="fullscreen-background"></div>
+    <h1>YuGiDex</h1>
+    <div class="flip-container">
+      <div class="flip-box">
+        <div class="flip-front">
+          <img src="cardback.jpeg" alt="cardback" />
+        </div>
+        <div class="flip-back">
+          <img src="flamewingman.jpeg" alt="Elemental Hero Flamewingman" />
+        </div>
+      </div>
+    </div>
+
+    <h2>Coming Soon..</h2>
+    <div class="container text-center">
+      <div class="cool p-3">
+        <div class="row">
+          <div class="col-9">
+            <label for="exampleDataList" class="form-label"
+              ><h3>Card Name</h3></label
+            >
+            <input
+              class="form-control form-control-lg border-black"
+              list="datalistOptions"
+              id="exampleDataList"
+              placeholder="Enter Card Name"
+            />
+            <datalist id="datalistOptions"> </datalist>
+          </div>
+          <div class="col-3 justify-self-start align-self-end flex-start: row">
+            <button
+              id="searchButton"
+              type="button"
+              class="btn btn-primary btn-lg"
+            >
+              DRAW
+            </button>
+          </div>
+        </div>
+        <div class="row p-4">
+          <div class="col-6 col-md-4">
+            <select
+              id="cardType"
+              class="form-select"
+              aria-label="Default select example"
+            >
+              <option value="">Card Type</option>
+            </select>
+          </div>
+          <div class="col-6 col-md-4">
+            <select
+              id="cardAttribute"
+              class="form-select"
+              aria-label="Default select example"
+            >
+              <option value="">Attribute</option>
+            </select>
+          </div>
+          <div class="col-6 col-md-4">
+            <select
+              id="cardLevel"
+              class="form-select"
+              aria-label="Default select example"
+            >
+              <option value="">Level</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <img
+      class="cardImage"
+      id="cardImage"
+      src=""
+      alt="Card Image"
+      style="display: none"
+    />
+    <div id="cardDisplay" class="card-container"></div>
+    <div id="cardDisplay"></div>
+    <div id="cardNotFoundMessage">No cards found.</div>
+    <button id="resetButton">Reset Filters</button>
+
+    <script src="yugiohcards.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
