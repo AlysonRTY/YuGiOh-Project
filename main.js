@@ -35,11 +35,12 @@ yugiohCards.forEach(yugiohCard => {
 
 
 const allAttributes = yugiohCards.map(card => card.attribute)//creates an array of all attribute values from the yugiohCards array
-    .filter(attribute => attribute !== undefined);
+  .filter(attribute => attribute !== undefined);
+    // console.log('allAttributes :>> ', allAttributes); could be done in 1 filter function!!!!!!
 
 const uniqueAttributes = [...new Set(allAttributes)]; //creates a Set of unique attributes (since Set automatically removes duplicates)
 //converts the Set back into an array using the spread operator (...)
-console.log(uniqueAttributes);
+// console.log(uniqueAttributes);
 
 uniqueAttributes.forEach(attribute => {
   const optionElement = document.createElement("option");
@@ -51,14 +52,6 @@ uniqueAttributes.forEach(attribute => {
 
 
 
-// const filterUniqueCardsByAttribute = (attribute) => {
-//     return yugiohCards.filter(card => card.attribute === attribute);
-// };
-// const waterCards = filterUniqueCardsByAttribute('WATER');
-// console.log(waterCards);
-
-
-
 
 const allLevels = yugiohCards.map(card => card.level) 
     .filter(level => level !== undefined);
@@ -67,7 +60,7 @@ const uniqueLevels = [...new Set(allLevels)]; //create a collection of unique le
 
 const sortedUniqueLevels = uniqueLevels.sort((a, b) => a - b);  //sort the level from low to high
 
-console.log('Unique Levels:', sortedUniqueLevels);
+// console.log('Unique Levels:', sortedUniqueLevels);
 
 sortedUniqueLevels.forEach(level => {
     const optionElement = document.createElement("option");
@@ -78,22 +71,10 @@ sortedUniqueLevels.forEach(level => {
 
 
 
-// const sortedCards = yugiohCards.sort((a, b) => a.level - b.level);
-
-// console.log('Cards sorted by level (lowest to highest):');
-// sortedCards.forEach(card => {
-//     console.log(`Name: ${card.name}, Level: ${card.level}`);
-// });
-
-
-
-
-
-
 const allTypes = yugiohCards.map(card => card.type);
 const uniqueTypes = allTypes.filter((type, index, self) => self.indexOf(type) === index);
 
-console.log(uniqueTypes);
+// console.log(uniqueTypes);
 
 uniqueTypes.forEach(type => {
     const optionElement = document.createElement("option");
@@ -102,62 +83,8 @@ uniqueTypes.forEach(type => {
     cardType.appendChild(optionElement);
 })
 
-console.log(`unique types ${uniqueTypes}`);
-
 
 // ----------------------------------------------------------------------
-// Dropdown for Attributes----------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // 
 // Combined Filters FUNCITON LETS GO_!!!!-------------------------------------------------------
 
@@ -230,8 +157,6 @@ const resetFilters = () => {
   cardNotFoundMessage.style.display = 'none';
 };
 
-// Event listener for the search button
 searchButton.addEventListener('click', applyFilters);
 
-// Event listener for the reset button
 resetButton.addEventListener('click', resetFilters);

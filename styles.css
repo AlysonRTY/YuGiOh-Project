@@ -72,15 +72,11 @@ h2 {
 
 /* Front face (visible by default) */
 .flip-front {
-  background-color: #bbb;
-  color: black;
   z-index: 2;
 }
 
 /* Back face (hidden initially) */
 .flip-back {
-  background-color: #555;
-  color: white;
   transform: rotateY(180deg);
 }
 
@@ -95,11 +91,9 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  /* background-color: transparent; */
 }
 
 .card {
-  /* background-color: transparent; */
   border: none;
   padding: 0;
 }
@@ -114,7 +108,7 @@ h2 {
 #cardNotFoundMessage {
   display: none;
   text-align: center;
-  margin: 20px auto;
+  margin: 5px auto 20px;
   font-size: 18px;
   color: #ff0000;
   padding: 10px;
@@ -122,6 +116,8 @@ h2 {
   border-radius: 5px;
   background-color: #ffe6e6;
   width: fit-content;
+  position: relative;
+  z-index: 10;
 }
 
 #resetButton {
@@ -134,6 +130,10 @@ h2 {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  position: sticky;
+  bottom: 20px;
+  z-index: 1000;
+  width: fit-content;
 }
 
 #resetButton:hover {
